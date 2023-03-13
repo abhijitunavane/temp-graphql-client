@@ -1,0 +1,75 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id "com.apollographql.apollo3" version "3.7.4"
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.demographql"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        targetSdkVersion 33
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+    compileSdkVersion 33
+    namespace 'com.example.demographql'
+}
+
+dependencies {
+
+    api project(':base')
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Kotlin coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    testImplementation 'junit:junit:4.13.2'
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // Apollo GraphQL dependencies
+    implementation 'com.apollographql.apollo3:apollo-runtime:3.7.4'
+
+    // Dagger Android dependencies
+    implementation "com.google.dagger:dagger-android:2.45"
+    implementation 'com.google.dagger:dagger-android-support:2.45'
+    kapt "com.google.dagger:dagger-compiler:2.45"
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.example.demographql")
+        schemaFile.set(file("src/main/graphql/com/example/demographql/schema.graphqls"))
+        generateKotlinModels.set(true)
+    }
+}

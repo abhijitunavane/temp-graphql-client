@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DemoGraphQL</string>
+    <string name="users_fragment">This is Users fragment</string>
+    <string name="loading_state">Loading… Please wait!</string>
+    <string name="error_state">Sorry, some error occurred please try again later</string>
+    <string name="success_state">Date fetched successfully! hooray</string>
+    <string name="user_name_heading">User Name</string>
+    <string name="user_age_heading">Age</string>
+</resources>

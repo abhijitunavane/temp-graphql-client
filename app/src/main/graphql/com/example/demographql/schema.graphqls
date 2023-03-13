@@ -1,0 +1,17 @@
+type User {
+  id: ID!
+
+  name: String!
+
+  age: Int!
+}
+
+type Query {
+  getAllUsers: [User!]!
+
+  getUser(id: ID!): User!
+}
+
+schema {
+  query: Query
+}

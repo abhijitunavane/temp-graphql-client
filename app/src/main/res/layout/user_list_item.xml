@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.UsersFragment">
+
+        <TextView
+            android:id="@id/user_list_item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/users_item_textview_size"
+            android:textStyle="bold"
+            android:text="@string/user_name_heading"
+            tools:text="@string/user_name_heading"/>
+
+        <TextView
+            android:id="@id/user_list_item_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/users_item_textview_size"
+            android:textStyle="bold"
+            android:text="@string/user_age_heading"
+            tools:text="@string/user_age_heading"/>
+
+    </LinearLayout>
+</layout>

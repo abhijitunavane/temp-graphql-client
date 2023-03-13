@@ -1,0 +1,11 @@
+{
+  "name": "Demo GraphQL Schema",
+  "schemaPath": "com/example/demographql/schema.graphqls",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "http://localhost:3000/graphql"
+      }
+    }
+  }
+}
